@@ -1,0 +1,47 @@
+<% include partials/header %>
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container">
+             <h1 style="text-align:center;">Welcome To BloodShare!</h1>
+             <p style="text-align:center;">Donate Blood Save Life!!</p>
+             <p>
+               <p style="text-align:center;"><a class="btn btn-primary btn-lg" href="Signup">Add Yourself as a Donor</a><p>
+             </p>
+         </div>
+     </header>
+     <div style="top-padding:5px;" class="container">
+    <div class="row">
+        <h1 style="text-align: center">Search For a Donor</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            
+            <form action="/Profile" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="city" placeholder="City*  ( e.g:&nbsp;Mumbai)">(First Letter Capital)
+                </div>
+               <div class="form-group">
+                     <b>
+                   BloodGroup:- </b> &nbsp;&nbsp;
+                   <select name="Blood" style="height:40px;width:100px;">
+                       <option>Select</option>
+                         <option value="O+">O+</option>
+                             <option value="O-">O-</option>
+                                <option value="A+">A+</option>
+                                   <option value="A-">A-</option>
+                                      <option value="B+">B+</option>
+                                         <option value="B-">B-</option>
+                                           <option value="AB+">AB+</option>
+                                             <option value="AB-">AB-</option>
+                   </select>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Search</button>
+                </div>
+            </form>
+           
+        </div>
+    </div>
+</div>
+    
+
+<% include partials/footer %>
+

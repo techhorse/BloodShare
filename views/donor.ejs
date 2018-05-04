@@ -1,0 +1,33 @@
+<% include partials/header %>
+ 
+ 
+ 
+ 
+  <header class="jumbotron">
+    <h2 style="text-align:center;">Welcome <%= currentUser.username %> </h2>
+             <h1 style="text-align:center;">Profile Section</h1>
+     </header>
+
+<div style="width:50%;"class="card col-sm">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgIBhpxjYjLzjMaiJgWV3u1H7xS-EdPEcI_0UWOAx1Sg7MO8Vp" alt="John" style="width:50%">
+  <h1><%= currentUser.username %></h1>
+  <p class="title"><%= currentUser.Blood %></p>
+  <p><%= currentUser.Age %></p>
+   <p><%= currentUser.optradio %></p>
+  <p><%= currentUser.Email %></p>
+  <p><%= currentUser.Mobile %></p>
+  <p><%= currentUser.City %></p>
+  
+  
+  <div style="margin: 24px 0;">
+    <a class="a1" href="#"><i class="fa fa-dribbble"></i></a> 
+    <a  class="a1" href="#"><i class="fa fa-twitter"></i></a>  
+    <a  class="a1"  href="#"><i class="fa fa-linkedin"></i></a>  
+    <a  class="a1"  href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><button class="button1"><a href="Delete">Delete</a></button></p>
+ 
+</div>
+
+ <% include partials/footer %>
+

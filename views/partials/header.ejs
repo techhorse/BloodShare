@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+              BloodShare
+        </title>
+        <link rel = "stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+       <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+.btn{
+    margin-left:10px;
+}
+.title {
+  color: grey;
+  font-size: 18px;
+}
+.height{
+    height:50px;
+}
+.footer-copyright{
+    width:100% !important;
+    background-color:black;
+   font-family: 'Rubik', sans-serif;
+    color:white;
+    font-size:25px;
+    text-align:center;
+   
+    
+    
+   
+}
+.footer{
+    background-color:orange;
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    overflow:hidden;
+}
+.button1 {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #524e5d;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.a1 {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+.margin{
+    top-margin:500px;
+}
+.margin-left{
+    margin-left:1200px;
+}
+
+button:hover, a:hover {
+  opacity: 1.0;
+}
+</style>
+    </head>
+    <body>
+   <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><b>BloodShare</b></a>
+         
+            <nav style="margin-left:200px;margin-top:20px;class="navbar navbar-light bg-light">
+                      <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+            </nav>
+        </div>
+        <div style="margin-top:20px;margin-right:10px;"class="collapse navbar-collapse">
+            <ul class="navbar-nav nav navbar-right">
+            <%if(!currentUser){%>
+              <p><a class=" margin btn btn-primary btn-md nav-bar" href="/home">Home</a>
+              <a class="  margin btn btn-primary btn-md" href="/Portfolio">Donors</a>
+              <a class=" margin btn btn-primary btn-md" href="/Login">Login</a>
+              <a class=" margin btn btn-primary btn-md" href="/Signup">Signup</a>
+               <a class=" margin btn btn-primary btn-md" href="/about">About Us</a>
+              <a class=" margin btn btn-primary btn-md" href="/contact">Contact Us</a></p>
+              
+                 
+                            <%    }
+                          else{%>
+              <li><a>Signed In As <%=currentUser.username%> </a></li>
+              <a class=" margin btn btn-primary btn-md nav-bar" href="/home">Home</a>
+                <a class="  margin btn btn-primary btn-md" href="/Logout">Logout</a>
+                 <a class=" margin btn btn-primary btn-md" href="/about">About Us</a>
+              <a class=" margin btn btn-primary btn-md" href="/contact">Contact Us</a></p>
+               <% }%>
+            </ul>
+        </div>
+        </center>
+    </div>
+</nav>
+<div class="container">
+<% if(error && error.length > 0) { %>
+    <div class="alert alert-danger" role="alert">
+        <%= error %>
+    </div>
+<% } %>
+<% if(success && success.length > 0) { %>
+    <div class="alert alert-success" role="alert">
+        <%= success %>
+<% } %>
+</div>
+</div>
