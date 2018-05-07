@@ -23,7 +23,7 @@ var Schema = new mongoose.Schema({
     District: String,
     Mobile:Number,
     Email: String,
-    Gender : String,
+    optradio : String,
     Fresher: String,
     
 }); 

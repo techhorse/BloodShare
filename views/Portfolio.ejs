@@ -14,7 +14,9 @@
   <h1><%= campground.username%></h1></h1>
   <p class="title"><%= campground.Blood%></p>
   <p><%= campground.City %></p>
+  <% if(campground.optradio == "Male") { %>
   <p><%= campground.Mobile %></p>
+  <% } %>
   <div style="margin: 24px 0;">
     <a href="#"><i class="fa fa-dribbble"></i></a> 
     <a href="#"><i class="fa fa-twitter"></i></a>  
