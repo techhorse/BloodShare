@@ -12,14 +12,7 @@ mongoose.connect("mongodb://Abhishek:abhi199718@ds163689.mlab.com:63689/blood");
 var app = express();
 app.set("view engine","ejs");
 app.use(express.static('public'));
-var nodemailer = require("nodemailer");
-var smtpTransport = nodemailer.createTransport("SMTP",{
-    service: "Gmail",
-    auth: {
-        user: "projectlifeshare@gmail.com",
-        pass: "abhi199718"
-    }
-});
+
 
 //SCHEMA SETUP
 var Schema = new mongoose.Schema({
@@ -60,20 +53,7 @@ app.use(function(req,res,next){
 });
 
 app.post("/Profile",function(req,res){
-    var mailOptions = {
-    from: "BloodShare✔ <projectlifeshare@gmail.com>", // sender address
-    to: "projectlifeshare@gmail.com", // list of receivers
-    subject: "Blood Requirement✔", // Subject line
-    text: "Blood Needed✔", // plaintext body
-    html:req.body.city+"\n"+req.body.Blood // html body
-};
-    smtpTransport.sendMail(mailOptions, function(error, response){
-    if(error){
-        console.log(error);
-    }else{
-        console.log("Message sent: " + response.message);
-    }
-});
+   
   Users.find({"City":req.body.city,"Blood":req.body.Blood},function(err,docs){
        if(err){
            console.log(err);
